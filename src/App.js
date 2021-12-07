@@ -1,12 +1,15 @@
 import './App.css';
 import React from 'react';
-const _ = require('lodash');
+import { index } from './utils/index'
 
 function App() {
 
 const productos = require('./products.json');
 const categoriaProductos = productos.results;
 
+<<<<<<< Updated upstream
+console.log(index(categoriaProductos));
+=======
 
 /*levantar el api*/
 
@@ -20,6 +23,7 @@ fetch(`${api_url}/producto`)
 
 
 /*console.log(miFuncion(categoriaProductos));*/
+>>>>>>> Stashed changes
 
 
 
@@ -98,9 +102,12 @@ console.log(`Hay ${opcionesActivas} productos con al menos una opcion activa`); 
       Ingrese una categoria   
     <input type="text" name="categoriaProduct"/>
     <h3>Categorias disponibles:</h3>
+<<<<<<< Updated upstream
+=======
     <ol>
       
     </ol>
+>>>>>>> Stashed changes
     </React.Fragment>
   );
 }
