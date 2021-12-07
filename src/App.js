@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { index } from './utils/index'
+import axios from 'axios';
 
 function App() {
 
@@ -9,7 +10,20 @@ const categoriaProductos = productos.results;
 
 console.log(index(categoriaProductos));
 
-/*levantar el api*/
+
+axios({
+  method: 'get',
+  url: 'https://api.fudex.com.ar/api/locales/local/186/producto',
+})
+  .then(res =>{
+    console.log(res)
+});
+
+
+
+
+/*levantar el api
+
 
 const api_url = 'https://api.fudex.com.ar/api/locales/local/186';
 
@@ -17,11 +31,11 @@ fetch(`${api_url}/producto`)
   .then((response) => response.json())
   .then((producto) => {
     console.log(producto)
-  })
+  })*/
+
 
 
 /*console.log(miFuncion(categoriaProductos));*/
-
 
 
 /* //Suma de precios de los productos
@@ -100,7 +114,7 @@ console.log(`Hay ${opcionesActivas} productos con al menos una opcion activa`); 
     <input type="text" name="categoriaProduct"/>
     <h3>Categorias disponibles:</h3>
     <ol>
-      { listaRenderisada }
+      
     </ol>
     </React.Fragment>
   );
